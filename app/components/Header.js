@@ -14,7 +14,7 @@ var Header = React.createClass({
             <a href="#/login">Login</a>
         </li>
         <li>
-            <a href="#">Link</a>
+            <a href="#/hub">Hub</a>
         </li>
     </ul>
 </nav>

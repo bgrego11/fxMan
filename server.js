@@ -9,22 +9,25 @@ oxr.set({ app_id: 'b3e3d3097383466fba640039d4f7ba4e' })
 
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
-mongoose.Promise = Promise;
 
 
-mongoose.connect("mongodb://heroku_dwv7kl0f:v34fd7p7rotfjmsilveibn1dho@ds131151.mlab.com:31151/heroku_dwv7kl0f");
+
+// mongoose.connect("");
+
+var link = 'mongodb://heroku_w773mnxx:ug6o2beqnkdobl352ala6k3tcq@ds133221.mlab.com:33221/heroku_w773mnxx';
+//Local link
+// var link = 'mongodb://localhost/nytreact';
+
+mongoose.connect(link);
 var db = mongoose.connection;
 
-// Show any mongoose errors
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
+db.on('error', function (err) {
+ console.log('Mongoose Error: ', err);
 });
 
-// Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
+db.once('open', function () {
+ console.log('Mongoose connection successful.');
 });
-
 var Trade = require("./models/Trade.js");
 var User = require("./models/User.js");
 

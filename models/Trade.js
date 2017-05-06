@@ -4,6 +4,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var tradeSchema = new Schema({
+  user_id: {
+    type: String,
+    required: true,
+  },
   buyAmt: {
     type: Number,
     required: "buy amt is Required",

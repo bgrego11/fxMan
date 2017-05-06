@@ -58,6 +58,7 @@ var Login  = React.createClass({
    var self = this;
     axios.post("/user/create",data).then(function(res) {
       console.log(res);
+      window.location.href = '/#/hub';
   
     })
   }

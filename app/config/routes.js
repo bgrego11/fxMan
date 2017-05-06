@@ -21,6 +21,7 @@ var IndexRoute = router.IndexRoute;
 import Main from "../components/main";
 import Promo from "../components/Promo";
 var Login = require("../components/Login");
+var Nav = require("../components/Nav");
 
 module.exports = (
  <Router history={hashHistory}>
@@ -30,9 +31,10 @@ module.exports = (
     </Route>
       {/* If user selects Child1 then show the appropriate component*/}
       <Route path="point1" component={Promo} >
-      
-
       </Route>
+      <Route path="hub" component={Nav} >
+      </Route>
+
     </Route>
 </Router>
 );

@@ -7,6 +7,7 @@ var Header = require("./Header");
 var Login = require("./Login");
 var Footer = require("./Footer");
 var Demo = require("./Demo");
+var Nav = require("./Nav");
 
 import Promo from "./Promo";
 

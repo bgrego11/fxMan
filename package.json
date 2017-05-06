@@ -1,0 +1,22 @@
+{
+  "name": "fxapp",
+  "version": "1.0.0",
+  "description": "application to allow simple fx conversion and simulated forex trading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benjamin Gregory, Steven Snyder",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "body-parser": "^1.15.2",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "moment": "^2.18.1",
+    "money": "^0.2.0",
+    "mongoose": "^4.9.7",
+    "open-exchange-rates": "^0.3.0",
+    "path": "^0.12.7"
+  }
+}

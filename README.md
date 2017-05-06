@@ -1,1 +1,1 @@
-# fxMan
+# forexProj

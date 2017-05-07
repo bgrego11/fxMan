@@ -12,7 +12,7 @@ oxr.set({ app_id: 'b3e3d3097383466fba640039d4f7ba4e' })
 mongoose.Promise = Promise;
 
 
-mongoose.connect("mongodb://heroku_tkvzkjbd:3bk1qu8102nho8rr2l4oev0a5j@ds133241.mlab.com:33241/heroku_tkvzkjbd");
+mongoose.connect("mongodb://heroku_zmgt7t27:mgdmvi5v28jejrvgr01peiqglr@ds133291.mlab.com:33291/heroku_zmgt7t27");
 var db = mongoose.connection;
 
 // Show any mongoose errors

@@ -21,6 +21,7 @@ class Trader extends React.Component {
     this.updateAmt = this.updateAmt.bind(this);
     this.setCcy = this.setCcy.bind(this); 
     this.reval = this.reval.bind(this); // Here we render the function
+    this.book = this.book.bind(this);
 
 }
   updateAmt(evt) {
@@ -34,10 +35,10 @@ class Trader extends React.Component {
       buyCcy: evt.target.value
     })
   }
-  Book(evt) {
+  book(evt) {
     evt.preventDefault();
     if (this.state.sellAmt !== '') {
-      data = this.state;
+      var data = this.state;
       axios.post("/book/trade",data).then(function(res) {
               console.log(res);
                  

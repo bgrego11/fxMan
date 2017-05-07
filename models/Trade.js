@@ -16,10 +16,6 @@ var tradeSchema = new Schema({
     type: Number,
     required: "sell amt is Required",
   },
-  sellCcy: {
-      type: String,
-      required: "sell ccy required"
-  },
   tradeDate: {
     type: String,
     trim: true,

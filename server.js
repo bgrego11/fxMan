@@ -42,18 +42,18 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("./public"));
 //converts from any amt of ccy to another 
 //to get 100 EUR to USD get localhost:8080/100/EUR/USD
-// app.get('/new/:amt/:sell/:buy',function(req,res){
-//         var amt = req.params.amt;
-//         var sell = req.params.sell;
-//         var buy = req.params.buy;
-//                 oxr.latest(function() {
-//                 // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
-//                 fx.rates = oxr.rates;
-//                 fx.base = oxr.base;
-//                 res.json(fx(amt).from(sell).to(buy));
-//             });
+app.post('/new/trade',function(req,res){
+        var amt = req.body.amt;
+        var sell = req.body.sell;
+        var buy = req.body.buy;
+                oxr.latest(function() {
+                // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
+                fx.rates = oxr.rates;
+                fx.base = oxr.base;
+                res.json(fx(amt).from(sell).to(buy));
+            });
             
-//  })
+ })
 
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));

@@ -8,7 +8,7 @@ var Footer = React.createClass({
   render: function() {
     return (
     <footer>
-        <p><a href="#">Created by</a> Benjamin Gregory.</p>
+        <p><a href="#">Created by</a> Benjamin Gregory and Steven Snyder.</p>
     </footer>
     )
   }

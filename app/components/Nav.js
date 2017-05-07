@@ -20,7 +20,7 @@ var Nav = React.createClass({
   	
     	<div className="images">
 
-  	<img src="../css/images/calculator.png" alt="Currency Calculator"  width="200" height="200" ClassName="img-rounded" style={divStyle}>
+  	<img src="../css/images/calculator.png" alt="Currency Calculator"  width="200" height="200" className="img-rounded" style={divStyle}>
     </img>
   	<img src="../css/images/currency.jpg" alt="Current Trades"  width="200" height="200" className="img-rounded" style={divStyle}>
     </img>

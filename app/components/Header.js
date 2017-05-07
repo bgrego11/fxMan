@@ -8,13 +8,13 @@ var Header = React.createClass({
   render: function() {
     return (
       <nav className="navbar navbar-inverse">
-    <a className="navbar-brand" href="#">Title</a>
+    <a className="navbar-brand" href="#/new">Trade Now</a>
     <ul className="nav navbar-nav">
         <li className="active">
             <a href="#/login">Login</a>
         </li>
         <li>
-            <a href="#">Link</a>
+            <a href="#/hub">Home</a>
         </li>
     </ul>
 </nav>

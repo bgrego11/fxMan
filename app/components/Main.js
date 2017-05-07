@@ -10,6 +10,7 @@ var Demo = require("./Demo");
 var Nav = require("./Nav");
 
 import Promo from "./Promo";
+import Trader from "./Trader";
 
 class Main extends React.Component {
   constructor(props) {
@@ -22,8 +23,6 @@ class Main extends React.Component {
 // Here we deploy the header component as though it were any other HTML element
   <div><Header />
   <div>
-  <div><Nav />
-  </div>
   <div className="container col-sm-10 col-md-5 col-lg-5">
     {this.props.children}
   </div>

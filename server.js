@@ -82,6 +82,27 @@ app.post('/new/trade',function(req,res){
 
   });
 
+app.post("/book/trade", function(req, res){
+    var data = req.body;
+    trade = new Trade(req.body);
+
+
+    trade.save( function(err,resp){
+        if (err) {
+          console.log(err);
+          res.send(err)
+        }
+        else {
+          console.log("saved");
+          res.send(trade);
+        }
+    })
+    
+
+  });
+
+
+
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   

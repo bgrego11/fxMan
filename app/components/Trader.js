@@ -14,7 +14,8 @@ class Trader extends React.Component {
       sellAmt: '',
       tradeDate: Date.now(),
       status: 'open',
-      profit: ''
+      profit: '',
+      client: sessionStorage.id
     };
 
     this.updateAmt = this.updateAmt.bind(this);
@@ -33,6 +34,21 @@ class Trader extends React.Component {
       buyCcy: evt.target.value
     })
   }
+  Book(evt) {
+    evt.preventDefault();
+    if (this.state.sellAmt !== '') {
+      data = this.state;
+      axios.post("/book/trade",data).then(function(res) {
+              console.log(res);
+                 
+          })
+    } else {
+      alert("you have not valued the trade")
+    }
+    
+
+    }
+    
   reval(evt) {
     evt.preventDefault();
     
@@ -82,6 +98,7 @@ class Trader extends React.Component {
         <div className="row">
           <div className="col-sm-12 col-lg-10 col-md-10">
             <button className="btn btn-default" onClick={this.reval} >Value My Trade</button>
+            <button className="btn btn-default" onClick={this.book} >Book My Trade</button>
           </div>
         
         </div>

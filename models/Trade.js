@@ -27,6 +27,11 @@ var tradeSchema = new Schema({
   },
   profit: {
       type: Number
+  },
+  client: {
+    type: String,
+    trim: true,
+    required: true,
   }
 
   

@@ -16,7 +16,7 @@ var Nav = React.createClass({
     return (
 
       <div>
-  		<h1>What would you like to do?</h1>
+  		<h2>What would you like to do?</h2>
   	
     	<div className="images">
 

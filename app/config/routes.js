@@ -40,8 +40,8 @@ module.exports = (
     <Route path="portfolio" component={Display}>
     <Route path="trades" component={Portfolio}>
     </Route>
-    <Route path="articles" component={News}>
     </Route>
+    <Route path="articles" component={News}>
     </Route>
     <Route path="new" component={Trader}>
     </Route>

@@ -13,6 +13,7 @@ import Promo from "./Promo";
 import Trader from "./Trader";
 import Portfolio from "./Portfolio";
 import Display from "./Display";
+import News from "./News";
 
 class Main extends React.Component {
   constructor(props) {

@@ -18,7 +18,11 @@ var Header = React.createClass({
         </li>
         <li>
             <a href="#/portfolio">Portfolio</a>
+        </li>
+                <li>
+            <a href="#/articles">Latest News</a>
         </li>'
+
     </ul>
 </nav>
     );

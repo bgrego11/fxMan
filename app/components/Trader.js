@@ -1,5 +1,7 @@
 var React = require("react");
 var axios = require("axios");
+var moment = require("moment");
+
 
 
 
@@ -14,7 +16,7 @@ class Trader extends React.Component {
       buyAmt: '',
       buyCcy: 'GBP',
       sellAmt: '',
-      tradeDate: Date.now(),
+      tradeDate: moment().format("MM-DD-YY"),
       status: 'open',
       profit: '',
       client: sessionStorage.id

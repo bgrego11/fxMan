@@ -23,13 +23,10 @@ var Login  = React.createClass({
     <div className="panel-body form-group">
         <label for="">User Name</label>
         <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" id="" placeholder="jill123" />
-         <label for="">Email</label>
-        <input value={this.state.email} onChange={this.updateEmail} type="text" className="form-control" id="" />
         <label for="">Password</label>
         <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
     </div>
     <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
-    <button id="logBtn" onClick={this.create} className="btn btn-success">Create</button>
     </form>
 </div>
 

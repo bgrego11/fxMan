@@ -25,6 +25,7 @@ import Trader from "../components/Trader";
 import Display from "../components/Display";
 import Portfolio from "../components/Portfolio";
 var Nav = require("../components/Nav");
+var News = require("../comonents/News");
 
 module.exports = (
  <Router history={hashHistory}>
@@ -38,7 +39,8 @@ module.exports = (
     <Route path="portfolio" component={Display}>
     <Route path="trades" component={Portfolio}>
     </Route>
-    
+    <Route path="articles" component={News}>
+    </Route>
     </Route>
     <Route path="new" component={Trader}>
     </Route>

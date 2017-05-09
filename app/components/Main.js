@@ -11,6 +11,8 @@ var Nav = require("./Nav");
 
 import Promo from "./Promo";
 import Trader from "./Trader";
+import Portfolio from "./Portfolio";
+import Display from "./Display";
 
 class Main extends React.Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class Main extends React.Component {
 // Here we deploy the header component as though it were any other HTML element
   <div><Header />
   <div>
-  <div className="container col-sm-10 col-md-5 col-lg-5">
+  <div className="container-fluid col-sm-12 col-md-12 col-lg-12">
     {this.props.children}
   </div>
   <Footer />

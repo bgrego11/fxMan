@@ -28,7 +28,6 @@ var Login  = React.createClass({
         <label for="">Password</label>
         <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
     </div>
-    <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
     <button id="logBtn" onClick={this.create} className="btn btn-success">Create</button>
     </form>
 </div>
@@ -57,18 +56,6 @@ var Login  = React.createClass({
    var data = this.state;
    var self = this;
     axios.post("/user/create",data).then(function(res) {
-      console.log(res.data);
-      sessionStorage.setItem("id", res.data._id)
-      window.location.href = '/#/hub';
-      console.log(sessionStorage);
-    })
-  },
-  login: function(e) {
-    e.preventDefault();
-   var data = this.state;
-   console.log(data);
-   var self = this;
-    axios.post("/user/login",data).then(function(res) {
       console.log(res.data);
       sessionStorage.setItem("id", res.data._id)
       window.location.href = '/#/hub';

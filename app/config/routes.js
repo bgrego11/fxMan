@@ -22,6 +22,8 @@ import Main from "../components/main";
 import Promo from "../components/Promo";
 var Login = require("../components/Login");
 import Trader from "../components/Trader";
+import Display from "../components/Display";
+import Portfolio from "../components/Portfolio";
 var Nav = require("../components/Nav");
 
 module.exports = (
@@ -32,6 +34,11 @@ module.exports = (
     </Route>
       {/* If user selects Child1 then show the appropriate component*/}
     <Route path="hub" component={Nav} >
+    </Route>
+    <Route path="portfolio" component={Display}>
+    <Route path="trades" component={Portfolio}>
+    </Route>
+    
     </Route>
     <Route path="new" component={Trader}>
     </Route>

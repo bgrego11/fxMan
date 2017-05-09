@@ -1,5 +1,9 @@
 var React = require("react");
 var axios = require("axios");
+var moment = require("moment");
+
+
+
 
 
 // Create the Header component
@@ -12,7 +16,7 @@ class Trader extends React.Component {
       buyAmt: '',
       buyCcy: 'GBP',
       sellAmt: '',
-      tradeDate: Date.now(),
+      tradeDate: moment().format("MM-DD-YY"),
       status: 'open',
       profit: '',
       client: sessionStorage.id
@@ -66,7 +70,7 @@ class Trader extends React.Component {
             axios.post("/new/trade",data).then(function(res) {
               var sellAmt = res.data;
               self.setState({
-                sellAmt: sellAmt
+                sellAmt: sellAmt.toFixed(2)
               }) 
               console.log(self.state);   
           })
@@ -81,25 +85,43 @@ class Trader extends React.Component {
             <label for="sel1">Select Currency to Purchase:</label>
             <select value={this.state.buyCcy} onChange={this.setCcy} className="form-control" id="sel1">
                 <option value="GBP">GBP</option>
+                <option value="AED">AED</option>
+                <option value="AFN">AFN</option>
+                <option value="AUD">AUD</option>
+                <option value="BRL">BRL</option>
+                <option value="BYR">BYR</option>
+                <option value="BZD">BZD</option>
+                <option value="CAD">CAD</option>
+                <option value="CLP">CLP</option>
+                <option value="CNY">CNY</option>
+                <option value="DKK">DKK</option>
+                <option value="HKD">HKD</option>
+                <option value="KRW">KRW</option>
+                <option value="MXN">MXN</option>
+                <option value="MYR">MYR</option>
+                <option value="NOK">NOK</option>
+                <option value="PHP">PHP</option>
+                <option value="RUB">RUB</option>
+                <option value="SEK">SEK</option>
+                <option value="TRY">TRY</option>
                 <option value="EUR" >EUR</option>
                 <option value="JPY">JPY</option>
                 <option value="CHF">CHF</option>
             </select>
         </div>
-        <div className="row">
-          <div className="col-sm-12 col-md-4 col-lg-4">
+        
             <label for="sel1">Amount</label>
             <input className="form-control" type="number" value={this.state.buyAmt} onChange={this.updateAmt} id="buyAmt"/>
-          </div>
+          
           <div className="col-sm-12 col-md-10 col-lg-10 well">
             <label for="sell">Current Value</label>
-            <div className="well">${this.state.sellAmt}</div>
+            <div className="well"><span className="glyphicon glyphicon-usd"></span>{this.state.sellAmt}</div>
           </div>
-        </div>
+        
         <div className="row">
           <div className="col-sm-12 col-lg-10 col-md-10">
             <button className="btn btn-default" onClick={this.reval} >Value My Trade</button>
-            <button className="btn btn-default" onClick={this.book} >Book My Trade</button>
+            <button className="btn btn-danger" onClick={this.book} >Book My Trade</button>
           </div>
         
         </div>

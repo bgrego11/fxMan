@@ -3,9 +3,25 @@ var moment = require("moment");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var path = require("path");
+var cheerio = require("cheerio");
+var axios = require("axios");
+//currency rate/conversion packages
 var oxr = require('open-exchange-rates'),
     fx = require('money');
 oxr.set({ app_id: 'b3e3d3097383466fba640039d4f7ba4e' })
+
+//encryption method
+var crypto = require('crypto'),
+    algorithm = 'aes-256-ctr',
+    password = 'd6F3Efeq';
+
+//encrypt function from crypto
+function encrypt(text){
+  var cipher = crypto.createCipher(algorithm,password)
+  var crypted = cipher.update(text,'utf8','hex')
+  crypted += cipher.final('hex');
+  return crypted;
+}
 
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -59,12 +75,40 @@ app.post('/new/trade',function(req,res){
     res.sendFile(path.join(__dirname, "./public/index.html"));
   });
 
+app.post("/user/login", function(req, res){
+    var data = req.body;
+    user = {
+      username: data.user,
+      hashPass: encrypt(data.password)
+    };
+
+
+    User.find({
+    username: user.username,
+  }, function(err, doc) {
+    if (err) {
+      res.json("bad user/pw")
+    }
+    else {
+      if (doc.hashPass === user.hashPass) {
+        res.json(doc)
+      }
+
+    }
+  })
+
+  
+    
+
+  });
+
+
   app.post("/user/create", function(req, res){
     var data = req.body;
     user = new User({
       username: data.user,
       email: data.email,
-      hashPass: data.password
+      hashPass: encrypt(data.password)
     });
 
 
@@ -81,6 +125,26 @@ app.post('/new/trade',function(req,res){
     
 
   });
+
+app.get("/articles", function(req, res) {
+  var articles = [];
+    axios.get("http://www.nytimes.com/").then( function(response) {
+    
+    var $ = cheerio.load(response.data);
+    
+     $("article h2").each(function(i, element) {
+         articles.push({
+             title: $(this).children("a").text(),    
+             link: $(this).children("a").attr("href")     })
+})
+}).then (function() {
+        console.log(articles);
+    })
+});
+
+
+
+  
 
 app.post("/book/trade", function(req, res){
     var data = req.body;

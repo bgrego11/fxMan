@@ -23,7 +23,7 @@ class Main extends React.Component {
 // Here we deploy the header component as though it were any other HTML element
   <div><Header />
   <div>
-  <div className="container col-sm-10 col-md-5 col-lg-5">
+  <div className="container col-sm-10 col-md-10 col-lg-10">
     {this.props.children}
   </div>
   <Footer />

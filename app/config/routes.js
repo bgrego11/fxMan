@@ -24,8 +24,9 @@ var Login = require("../components/Login");
 import Trader from "../components/Trader";
 import Display from "../components/Display";
 import Portfolio from "../components/Portfolio";
+import News from "../components/News";
 var Nav = require("../components/Nav");
-var News = require("../comonents/News");
+
 
 module.exports = (
  <Router history={hashHistory}>

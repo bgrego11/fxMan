@@ -19,14 +19,22 @@ var tradeSchema = new Schema({
   tradeDate: {
     type: String,
     trim: true,
-    required: "date is Required"
+    required: "t date is Required"
   },
-  status: {
-      type: String,
-      required: "status is required"
+  valueDate: {
+    type: String,
+    trim: true
+  },
+  closeVal: {
+      type: Number
   },
   profit: {
       type: Number
+  },
+  
+  status: {
+      type: String,
+      required: "status is required"
   },
   client: {
     type: String,

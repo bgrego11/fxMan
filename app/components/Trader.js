@@ -17,7 +17,9 @@ class Trader extends React.Component {
       buyCcy: 'GBP',
       sellAmt: '',
       tradeDate: moment().format("MM-DD-YY"),
+      valueDate: '',
       status: 'open',
+      closeVal: '',
       profit: '',
       client: sessionStorage.id
     };
@@ -108,10 +110,11 @@ class Trader extends React.Component {
                 <option value="JPY">JPY</option>
                 <option value="CHF">CHF</option>
             </select>
+             <label for="sel1">Amount</label>
+            <input className="form-control" type="number" value={this.state.buyAmt} onChange={this.updateAmt} id="buyAmt"/>
         </div>
         
-            <label for="sel1">Amount</label>
-            <input className="form-control" type="number" value={this.state.buyAmt} onChange={this.updateAmt} id="buyAmt"/>
+           
           
           <div className="col-sm-12 col-md-10 col-lg-10 well">
             <label for="sell">Current Value</label>

@@ -1,9 +1,7 @@
 // Include React
 var React = require("react");
 
-// Create the Header component
-// Notice how the header uses React.createClass
-// Notice how it uses a render function which specifies what will be displayed by the component
+// Create the News component
 class News extends React.Component {
 //   constructor(props) {
 //     super(props);

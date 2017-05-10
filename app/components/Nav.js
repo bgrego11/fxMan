@@ -21,7 +21,7 @@ var Nav = React.createClass({
   	
     	<div className="images">
 
-  	<a href="#/portfolio"><img src="../css/images/calculator.png" alt="Currency Calculator"  width="200" height="200" className="img-rounded" style={divStyle}>
+  	<a href="#/new"><img src="../css/images/calculator.png" alt="Currency Calculator"  width="200" height="200" className="img-rounded" style={divStyle}>
     </img></a>
   	<a href="#/portfolio"><img src="../css/images/currency.jpg" alt="Current Trades"  width="200" height="200" className="img-rounded" style={divStyle}>
     </img></a>

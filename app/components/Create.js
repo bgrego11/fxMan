@@ -5,7 +5,7 @@ var axios = require("axios");
 // Create the Header component
 // Notice how the header uses React.createClass
 // Notice how it uses a render function which specifies what will be displayed by the component
-var Login  = React.createClass({
+var Create  = React.createClass({
   getInitialState: function() {
     return {
       user: '',
@@ -16,7 +16,7 @@ var Login  = React.createClass({
   render: function() {
     return (
     
-      <div ref="login" id="login">
+      <div ref="login" id="log">
       <form action="" id="logDiv" method="POST" className="panel panel-default animated bounceInLeft" role="form">
     <legend>Login</legend>
 
@@ -66,4 +66,4 @@ var Login  = React.createClass({
 });
 
 // Export the component back for use in other files
-module.exports = Login;
+module.exports = Create;

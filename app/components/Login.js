@@ -10,25 +10,29 @@ var Login  = React.createClass({
     return {
       user: '',
       password: '',
-      email: ''
     };
   },
   render: function() {
+    
     return (
     
-      <div ref="login" id="login">
-      <form action="" id="logDiv" method="POST" className="panel panel-default animated bounceInLeft" role="form">
-    <legend>Login</legend>
+               <div ref="login" id="login">
+               {!sessionStorage.id &&
+                <form action="" id="logDiv" method="POST" className="panel panel-default animated bounceInLeft" role="form">
+              <legend>Login</legend>
 
-    <div className="panel-body form-group">
-        <label for="">User Name</label>
-        <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" id="" placeholder="jill123" />
-        <label for="">Password</label>
-        <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
-    </div>
-    <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
-    </form>
-</div>
+              <div className="panel-body form-group">
+                  <label for="">User Name</label>
+                  <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" id="" placeholder="jill123" />
+                  <label for="">Password</label>
+                  <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
+              </div>
+              <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
+              </form>
+              }
+          </div>
+      
+   
 
 
 
@@ -43,22 +47,6 @@ var Login  = React.createClass({
     this.setState({
       password: evt.target.value
     });
-  },
-  updateEmail: function(evt) {
-    this.setState({
-      email: evt.target.value
-    });
-  },
-  create: function(e) {
-    e.preventDefault();
-   var data = this.state;
-   var self = this;
-    axios.post("/user/create",data).then(function(res) {
-      console.log(res.data);
-      sessionStorage.setItem("id", res.data._id)
-      window.location.href = '/#/hub';
-      console.log(sessionStorage);
-    })
   },
   login: function(e) {
     e.preventDefault();

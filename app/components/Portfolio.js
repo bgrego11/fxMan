@@ -15,7 +15,7 @@ class Portfolio extends React.Component {
       client: sessionStorage.id,
       trades: []
     };
-
+      this.close = this.close.bind(this);
     // this.reval = this.reval.bind(this); // Here we render the function
   }
   componentDidMount() {
@@ -29,7 +29,18 @@ class Portfolio extends React.Component {
       })
   })
   }
+  close (evt) {
+    evt.preventDefault();
+    self = this;
+    var id = evt.target.getAttribute("data-id");
+    axios.get("/close/"+id).then(function(res) {
+        console.log(res.data);
 
+      })
+  }
+
+
+  
   render() {
 
     return ( 
@@ -50,9 +61,15 @@ class Portfolio extends React.Component {
                     <td>{deal.buyAmt}</td>
                     <td>$ {deal.sellAmt}</td>
                     <td>{deal.tradeDate}</td>
-                    <td><button type="button" className="btn btn-default btn-lg">
-  <span className="glyphicon glyphicon-random" aria-hidden="true"></span>
-</button></td>
+                    <td>
+                    { deal.status ==="open" ? (
+                    <button type="button" className="btn btn-danger btn-lg" data-id={deal._id} onClick={this.close}>
+                    sell
+                    </button>
+                    ) : (
+                      <div>closed</div>
+                    )
+                    }</td>
 
 		            </tr>
                       )

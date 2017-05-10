@@ -77,6 +77,43 @@ app.post('/new/trade', function (req, res) {
 
 })
 
+
+app.get("/close/:id", function (req, res) {
+    var id = req.params.id;
+    Trade.findById(id,function(err, doc) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(doc);
+        var deal = doc;
+        oxr.latest(function () {
+              // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
+              fx.rates = oxr.rates;
+              fx.base = oxr.base;
+              var closeVal = fx(deal.buyAmt).from(deal.buyCcy).to('USD');
+              var pnl = closeVal - deal.sellAmt;
+              var valueDate = moment().format("MM-DD-YY");
+              Trade.findByIdAndUpdate(deal._id,{ 
+                    $set: { 
+                      closeVal: closeVal.toFixed(2) ,
+                      valueDate: valueDate,
+                      profit: pnl.toFixed(2),
+                      status: 'closed'  
+                    }
+                  }, function(err, doc){
+                    if (err) {
+                      console.log(err)
+                    } else {
+                      res.send("trade was closed")
+                    }
+                  })
+
+            });
+        
+      }
+    })
+});
+
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });

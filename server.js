@@ -144,18 +144,18 @@ app.post("/user/create", function (req, res) {
 
 app.get("/articles", function (req, res) {
   var articles = [];
-  axios.get("http://www.nytimes.com/").then(function (response) {
+  axios.get("https://www.fxstreet.com/news").then(function (response) {
 
     var $ = cheerio.load(response.data);
 
-    $("article h2").each(function (i, element) {
+    $("h2.fxs_entryHeadline").each(function (i, element) {
       articles.push({
         title: $(this).children("a").text(),
         link: $(this).children("a").attr("href")
       })
     })
   }).then(function () {
-    console.log(articles);
+   res.json(articles);
   })
 });
 

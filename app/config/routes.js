@@ -25,6 +25,7 @@ import Trader from "../components/Trader";
 import Display from "../components/Display";
 import Portfolio from "../components/Portfolio";
 import News from "../components/News";
+import Summary from "../components/Summary";
 var Nav = require("../components/Nav");
 
 
@@ -39,6 +40,8 @@ module.exports = (
     </Route>
     <Route path="portfolio" component={Display}>
     <Route path="trades" component={Portfolio}>
+    </Route>
+    <Route path="summary" component={Summary}>
     </Route>
     </Route>
     <Route path="articles" component={News}>

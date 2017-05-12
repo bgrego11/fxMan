@@ -13,10 +13,8 @@ render() {
     <div className="well col-sm-12 col-md-3 col-lg-3">
     <div class="list-group">
         <a href="#/portfolio/trades"><button type="button" className="list-group-item btn btn-default">Trade Blotter</button></a>
-        <button type="button" className="list-group-item btn btn-default">Account Summary</button>
-        <button type="button" className="list-group-item btn btn-default">Morbi leo risus</button>
-        <button type="button" className="list-group-item btn btn-default">Porta ac consectetur ac</button>
-        <button type="button" className="list-group-item btn btn-default">Vestibulum at eros</button>
+        <a href="#/portfolio/summary"><button type="button" className="list-group-item btn btn-default">Account Summary</button>
+        </a>
     </div>
     </div>
     <div className="col-sm-12 col-md-9 col-lg-9">

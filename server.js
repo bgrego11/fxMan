@@ -60,6 +60,13 @@ app.use(bodyParser.json({
   type: "application/vnd.api+json"
 }));
 
+
+
+    
+
+
+
+
 // Static directory
 app.use(express.static("./public"));
 //converts from any amt of ccy to another 
@@ -168,6 +175,30 @@ app.post("/portfolio", function (req, res) {
       res.json(err)
     } else {
       res.json(doc)
+    }
+  })
+});
+app.post("/summary", function (req, res) {
+  console.log(req.body);
+  var id = req.body.id;
+  Trade.find({
+    client: new RegExp('^'+id+'$', "i")
+  }, function (err, doc) {
+    if (err) {
+      res.json(err)
+    } else {
+      var tradeCount = doc.length;
+      var pnl = 0;
+      for (i in doc) {
+        if (doc[i].status === "closed") {
+          pnl += parseFloat(doc[i].profit);
+        }
+      };
+      summary = {
+        pnl: pnl,
+        tradeCount: tradeCount
+      };
+      res.json(summary);
     }
   })
 });

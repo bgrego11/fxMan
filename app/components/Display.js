@@ -15,6 +15,8 @@ render() {
         <a href="#/portfolio/trades"><button type="button" className="list-group-item btn btn-default">Trade Blotter</button></a>
         <a href="#/portfolio/summary"><button type="button" className="list-group-item btn btn-default">Account Summary</button>
         </a>
+        <a href="#/portfolio/charts"><button type="button" className="list-group-item btn btn-default">Charts</button>
+        </a>
     </div>
     </div>
     <div className="col-sm-12 col-md-9 col-lg-9">

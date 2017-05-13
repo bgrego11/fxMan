@@ -14,14 +14,17 @@ class News extends React.Component {
 }
 
 componentDidMount() {
-    var self = this
+    var self = this;
  var articles = [];
- axios.get("/articles").then(function (response) {
-     console.log(response);
+ axios.get("/articles").then(function (res) {
+     var articles = res.data;
+
+      self.setState({
+        articles: articles
 
  })
+})
 }
-
 
  render() {
 
@@ -37,7 +40,12 @@ componentDidMount() {
           </thead>
 
           <tbody>
+            { this.state.articles.map(article =>
+                  <tr>
+                   <td>{article.title}<br></br>{article.link}</td>
 
+                   </tr> 
+)}
           </tbody>
 </table>
 

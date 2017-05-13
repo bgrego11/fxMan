@@ -29,7 +29,7 @@ import Summary from "../components/Summary";
 var Nav = require("../components/Nav");
 
 var Create = require("../components/Create");
-=======
+
 import Chart from "../components/Chart";
 
 

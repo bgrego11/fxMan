@@ -42,7 +42,7 @@ componentDidMount() {
           <tbody>
             { this.state.articles.map(article =>
                   <tr>
-                   <td>{article.title}<br></br>{article.link}</td>
+                   <td><a href={article.link}>{article.title}</a></td>
 
                    </tr> 
 )}

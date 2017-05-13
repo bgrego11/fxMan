@@ -112,19 +112,14 @@ class Trader extends React.Component {
             </select>
              <label for="sel1">Amount</label>
             <input className="form-control" type="number" value={this.state.buyAmt} onChange={this.updateAmt} id="buyAmt"/>
+            <label for="sell">Current Value:</label>
+            <div className="form-control"><span className="glyphicon glyphicon-usd"></span>{this.state.sellAmt}</div>
         </div>
-        
-           
-          
-          <div className="col-sm-12 col-md-10 col-lg-10 well">
-            <label for="sell">Current Value</label>
-            <div className="well"><span className="glyphicon glyphicon-usd"></span>{this.state.sellAmt}</div>
-          </div>
         
         <div className="row">
           <div className="col-sm-12 col-lg-10 col-md-10">
-            <button className="btn btn-default" onClick={this.reval} >Value My Trade</button>
-            <button className="btn btn-danger" onClick={this.book} >Book My Trade</button>
+            <button className="btn btn-default" onClick={this.reval} >Value Trade</button>
+            <button className="btn btn-danger" onClick={this.book} >Book Trade</button>
           </div>
         
         </div>

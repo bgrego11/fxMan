@@ -5,13 +5,21 @@ var React = require("react");
 // Notice how the header uses React.createClass
 // Notice how it uses a render function which specifies what will be displayed by the component
 var Header = React.createClass({
+  logout: function(evt) {
+        sessionStorage.id ='';
+        window.location='#/login'
+  },
   render: function() {
     return (
       <nav className="navbar navbar-inverse">
-    <a className="navbar-brand" href="#/new">Trade Now</a>
-    <ul className="nav navbar-nav">
+    <ul className="nav navbar-nav col-sm-12 col-md-6-offset-3 col-lg-6-offset-3">
         <li className="active">
+            {!sessionStorage.id ? (
             <a href="#/login">Login</a>
+            ) : (
+            <a href="" onClick={this.logout}>Logout</a>
+            )
+            }
         </li>
         <li>
             <a href="#/hub">Home</a>

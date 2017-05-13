@@ -27,6 +27,8 @@ import Portfolio from "../components/Portfolio";
 import News from "../components/News";
 import Summary from "../components/Summary";
 var Nav = require("../components/Nav");
+import Chart from "../components/Chart";
+
 
 
 module.exports = (
@@ -42,6 +44,8 @@ module.exports = (
     <Route path="trades" component={Portfolio}>
     </Route>
     <Route path="summary" component={Summary}>
+    </Route>
+    <Route path="charts" component={Chart}>
     </Route>
     </Route>
     <Route path="articles" component={News}>

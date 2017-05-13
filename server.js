@@ -137,6 +137,35 @@ app.get("/close/:id", function (req, res) {
     })
 });
 
+// app.get("/close/:ccy", function (req, res) {
+//     var ccy = req.params.ccy;
+//     dates = [moment().format("YYYY-MM-DD")];
+//     for (i = 1; i < 10; i++) {
+
+//     }
+
+
+
+//         oxr.latest(function () {
+//               // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
+//               fx.rates = oxr.rates;
+//               fx.base = oxr.base;
+//               var closeVal = fx(deal.buyAmt).from(deal.buyCcy).to('USD');
+//               var pnl = closeVal - deal.sellAmt;
+//               var valueDate = moment().format("MM-DD-YY");
+             
+
+//             });
+//         oxr.historical('2001-02-03', function() {
+// 	// You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
+// });
+        
+//       }
+//     })
+// });
+
+
+
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });

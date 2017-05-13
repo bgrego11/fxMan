@@ -8,6 +8,7 @@ var Login = require("./Login");
 var Footer = require("./Footer");
 var Demo = require("./Demo");
 var Nav = require("./Nav");
+var Create = require("./Create");
 
 import Promo from "./Promo";
 import Trader from "./Trader";

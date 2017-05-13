@@ -27,8 +27,10 @@ import Portfolio from "../components/Portfolio";
 import News from "../components/News";
 import Summary from "../components/Summary";
 var Nav = require("../components/Nav");
-import Chart from "../components/Chart";
 
+var Create = require("../components/Create");
+=======
+import Chart from "../components/Chart";
 
 
 module.exports = (
@@ -36,6 +38,8 @@ module.exports = (
 
     <Route path="/" component={Main}>
     <Route path="login" component={Login} >
+    </Route>
+    <Route path="create" component={Create} >
     </Route>
       {/* If user selects Child1 then show the appropriate component*/}
     <Route path="hub" component={Nav} >

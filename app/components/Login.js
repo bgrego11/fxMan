@@ -28,6 +28,10 @@ var Login  = React.createClass({
                   <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
               </div>
               <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
+              <br></br>
+              <div><h2>Don't Have a login yet?</h2>
+              </div>
+              <button id="logBtn" onClick={this.next} className="btn btn-success">Create new User</button>
               </form>
               }
           </div>
@@ -59,7 +63,13 @@ var Login  = React.createClass({
       window.location.href = '/#/hub';
       console.log(sessionStorage);
     })
+  },
+  next: function(e) {
+    e.preventDefault();
+    window.location.href = '/#/create';
+
   }
+
 
 });
 

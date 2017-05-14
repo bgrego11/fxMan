@@ -68,7 +68,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
-  color:#A7A1AE;
+  color: #4c3f54;
   background-color:#1F2739;
 }
 
@@ -104,7 +104,7 @@ h2 a {
 	  font-weight: bold;
 	  font-size: 1em;
   text-align: left;
-  color: #185875;
+  color: white;
 }
 
 .container td {
@@ -132,22 +132,22 @@ h2 a {
 
 /* Background-color of the odd rows */
 .container tr:nth-child(odd) {
-	  background-color: #323C50;
+	  background-color:#f1f1f2;
 }
 
 /* Background-color of the even rows */
 .container tr:nth-child(even) {
-	  background-color: #2C3446;
+	  background-color: #bcbabe;
 }
 
 .container th {
-	  background-color: #1F2739;
+	  background-color: #c8000a;
 }
 
-.container td:first-child { color: #FB667A; }
+.container td:first-child { color: black; }
 
 .container tr:hover {
-   background-color: #464A52;
+   background-color: #c9c1d8;
 -webkit-box-shadow: 0 6px 6px -6px #0E1119;
 	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
 	        box-shadow: 0 6px 6px -6px #0E1119;
@@ -170,4 +170,18 @@ h2 a {
 @media (max-width: 800px) {
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }
+}
+
+
+label {
+    color: whitesmoke;
+
+}
+
+.port-head {
+  font-family: 'PT Sans Caption', sans-serif;
+}
+
+.display {
+ background-color: rgba(0, 0, 0, 0.9);
 }

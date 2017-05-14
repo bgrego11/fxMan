@@ -9,8 +9,9 @@ class Display extends React.Component {
 render() {
 
     return (
-<div className="col-md-12 col-sm-12 col-lg-12 well">
-    <h1 className="well">Portfolio Viewer</h1>
+<div className="col-md-12 col-sm-12 col-lg-12 well display">
+    <h1 className="well port-head">
+    Portfolio Viewer</h1>
     <div className="well col-sm-12 col-md-3 col-lg-3">
         <div class="list-group">
             <a href="#/portfolio/trades"><button type="button" className="list-group-item btn btn-default">Trade Blotter</button></a>

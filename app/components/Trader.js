@@ -110,9 +110,9 @@ class Trader extends React.Component {
                 <option value="JPY">JPY</option>
                 <option value="CHF">CHF</option>
             </select>
-             <label for="sel1">Amount</label>
+             <label className="label" for="sel1">Amount</label>
             <input className="form-control" type="number" value={this.state.buyAmt} onChange={this.updateAmt} id="buyAmt"/>
-            <label for="sell">Current Value:</label>
+            <label className="label"  for="sell">Current Value:</label>
             <div className="form-control"><span className="glyphicon glyphicon-usd"></span>{this.state.sellAmt}</div>
         </div>
         

@@ -28,7 +28,7 @@ var Create  = React.createClass({
         <label for="">Password</label>
         <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
     </div>
-    <button id="logBtn" onClick={this.create} className="btn btn-success">Create</button>
+    <button id="logBtn" onClick={this.create} className="btn btn-danger">Create</button>
     </form>
 </div>
 

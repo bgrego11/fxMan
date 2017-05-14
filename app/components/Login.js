@@ -27,11 +27,11 @@ var Login  = React.createClass({
                   <label for="">Password</label>
                   <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
               </div>
-              <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
+              <button id="logBtn" onClick={this.login} className="btn btn-danger">Login</button>
               <br></br>
               <div><h2>Don't Have a login yet?</h2>
               </div>
-              <button id="logBtn" onClick={this.next} className="btn btn-success">Create new User</button>
+              <button id="logBtn" onClick={this.next} className="btn btn-danger">Create new User</button>
               </form>
               }
           </div>

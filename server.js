@@ -207,6 +207,44 @@ app.post("/portfolio", function (req, res) {
     }
   })
 });
+
+app.post("/chart", function (req, res) {
+  console.log(req.body);
+  var id = req.body.id;
+  if (req.body.report === "pfc") {
+        Trade.aggregate({
+            $match: {
+            client: new RegExp('^'+id+'$', "i")
+          }
+        },{
+            $group : { _id : "$buyCcy", amount: {$sum : "$buyAmt"} } 
+        }, function (err, doc) {
+            if (err) {
+              res.json(err)
+            } else {
+              res.json(doc)
+            }
+          })
+  } else if (req.body.report === "tbc") {
+        Trade.aggregate({
+            $match: {
+            client: new RegExp('^'+id+'$', "i")
+          }
+        },{
+            $group : { _id : "$buyCcy", amount: {$sum: 1} } 
+        }, function (err, doc) {
+            if (err) {
+              res.json(err)
+            } else {
+              res.json(doc)
+            }
+          })
+  };
+  
+});
+
+
+
 app.post("/summary", function (req, res) {
   console.log(req.body);
   var id = req.body.id;
@@ -218,14 +256,18 @@ app.post("/summary", function (req, res) {
     } else {
       var tradeCount = doc.length;
       var pnl = 0;
+      var totalBuy = 0;
       for (i in doc) {
+       totalBuy+= doc[i].sellAmt;
         if (doc[i].status === "closed") {
           pnl += parseFloat(doc[i].profit);
         }
       };
+
       summary = {
         pnl: pnl,
-        tradeCount: tradeCount
+        tradeCount: tradeCount,
+        totalBuy: totalBuy.toFixed(2)
       };
       res.json(summary);
     }

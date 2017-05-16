@@ -12,31 +12,53 @@ class Chart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ccy: "EUR",
+      id: sessionStorage.id,
+      report: "pfc",
       data: [
             {
-                key: "RATES",
+                key: "Amount Purchased by Currency",
                 values: [
-                {label: "5-3-17", value: 1.1},
-                {label: "5-4-17", value: 3},
-                {label: "5-5-17", value: 5}
+                // {label: "5-3-17", value: 1.1},
+                // {label: "5-4-17", value: 3},
+                // {label: "5-5-17", value: 5}
                 ]
             }],
-      type: "line"
+      type: "bar"
 
     };
-    this.setCcy = this.setCcy.bind(this); 
+    this.setReportType = this.setReportType.bind(this); 
       
     // this.reval = this.reval.bind(this); // Here we render the function
   }
-   setCcy(evt) {
+   setReportType(evt) {
     this.setState({
-      ccy: evt.target.value
-    })
+      report: evt.target.value
+    });
+    
+    var self = this;
+    self.state.data[0].values = []
+    axios.post("/chart", self.state).then(function(res) {
+             console.log(res.data); 
+             var trades = res.data;
+             for (var i in trades) {
+               self.state.data[0].values.push({label: trades[i]._id, value: trades[i].amount})
+             }
+             self.setState({
+               data: self.state.data
+             });
+          })
+    
   }
   componentDidMount() {
-        axios.get("/rates/"+this.state.ccy).then(function(res) {
-             console.log(res.data) ; 
+        var self = this;
+        axios.post("/chart", this.state).then(function(res) {
+             console.log(res.data); 
+             var trades = res.data;
+             for (var i in trades) {
+               self.state.data[0].values.push({label: trades[i]._id, value: trades[i].amount})
+             }
+             self.setState(self.state);
+             console.log(self.state);
           })
   }
   
@@ -49,30 +71,9 @@ return(
 <div>
 <div className="form-group row">
             <label for="sel1">Select Currency to Chart:</label>
-            <select value={this.state.ccy} onChange={this.setCcy} className="form-control" id="sel1">
-                <option value="GBP">GBP</option>
-                <option value="AED">AED</option>
-                <option value="AFN">AFN</option>
-                <option value="AUD">AUD</option>
-                <option value="BRL">BRL</option>
-                <option value="BYR">BYR</option>
-                <option value="BZD">BZD</option>
-                <option value="CAD">CAD</option>
-                <option value="CLP">CLP</option>
-                <option value="CNY">CNY</option>
-                <option value="DKK">DKK</option>
-                <option value="HKD">HKD</option>
-                <option value="KRW">KRW</option>
-                <option value="MXN">MXN</option>
-                <option value="MYR">MYR</option>
-                <option value="NOK">NOK</option>
-                <option value="PHP">PHP</option>
-                <option value="RUB">RUB</option>
-                <option value="SEK">SEK</option>
-                <option value="TRY">TRY</option>
-                <option value="EUR" >EUR</option>
-                <option value="JPY">JPY</option>
-                <option value="CHF">CHF</option>
+            <select value={this.state.report} onChange={this.setReportType} className="form-control" id="sel1">
+                <option value="pfc">Purchase Amount by Currency</option>
+                <option value="tbc">Number of Trades by Currency</option>
             </select>
         </div>
 <C3Chart data={this.state.data} type={this.state.type} options={options}/>

@@ -14,6 +14,7 @@ class Summary extends React.Component {
     this.state = {
       client: sessionStorage.id,
       tradeCount: [],
+      totalBuy: 0,
       pnl: 0,
 
     };
@@ -26,11 +27,14 @@ class Summary extends React.Component {
     axios.post("/Summary",{id: self.state.client}).then(function(res) {
       var tradeCount = res.data.tradeCount;
       var pnl = res.data.pnl;
+      var totalBuy = res.data.totalBuy;
       self.state.tradeCount = tradeCount;
       self.state.pnl = pnl;
+      self.state.totalBuy = totalBuy;
       self.setState({
         tradeCount: self.state.tradeCount,
-        pnl: self.state.pnl
+        pnl: self.state.pnl,
+        totalBuy: self.state.totalBuy
       })
   })
   }
@@ -45,6 +49,7 @@ class Summary extends React.Component {
               <thead>
                 <tr>
                   <th><h1>Total Number of Deals</h1></th>
+                  <th><h1>Amount purchased USD</h1></th>
                   <th><h1>Realized Profit</h1></th>
                 </tr>
               </thead>
@@ -52,6 +57,7 @@ class Summary extends React.Component {
                 
                   <tr>
                     <td>{this.state.tradeCount}</td>
+                    <td>$ {this.state.totalBuy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     <td>$ {this.state.pnl.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>    
 		          </tr>
               

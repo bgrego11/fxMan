@@ -17,7 +17,7 @@ componentDidMount() {
     var self = this;
  var articles = [];
  axios.get("/articles").then(function (res) {
-     var articles = res.data;
+     var articles = res.data.slice(0,10);
 
       self.setState({
         articles: articles

@@ -16,6 +16,10 @@ var Create  = React.createClass({
   render: function() {
     return (
     
+        <div className= "row">
+     <div className="col-sm-4">
+     </div>
+     <div className="col-sm-4">
       <div ref="login" id="log">
       <form action="" id="logDiv" method="POST" className="panel panel-default animated bounceInLeft" role="form">
     <legend>Login</legend>
@@ -31,6 +35,11 @@ var Create  = React.createClass({
     <button id="logBtn" onClick={this.create} className="btn btn-danger">Create</button>
     </form>
 </div>
+</div>
+     <div className="col-sm-4">
+     </div>
+     </div>
+
 
 
 

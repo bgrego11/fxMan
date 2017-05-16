@@ -51,17 +51,15 @@ componentDidMount() {
           <div className="well col-md-8">
           <table className="table table-hover">
           <thead>
-          <tr><th><h2>
+          <tr><th><h1>
           The Latest Foreign Currency Exchange news and updates!
-          </h2></th></tr>
+          </h1></th></tr>
           </thead>
 
           <tbody>
             { this.state.articles.map(article =>
                   <tr>
                    <td><span className="glyphicon glyphicon-search" style={divStyle} aria-hidden="true"></span>
-                   <span className="glyphicon glyphicon-usd" style={divStyle} aria-hidden="true"></span>
-                   <span className="glyphicon glyphicon-gbp" style={redStyle} aria-hidden="true"></span>
                     <span className="glyphicon glyphicon-eur" style={redStyle} aria-hidden="true"></span><a href={article.link}> {article.title}</a></td>
 
                    </tr> 

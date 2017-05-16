@@ -16,6 +16,10 @@ var Login  = React.createClass({
     
     return (
     
+    <div className= "row">
+     <div className="col-sm-4">
+     </div>
+     <div className="col-sm-4">
                <div ref="login" id="login">
                {!sessionStorage.id &&
                 <form action="" id="logDiv" method="POST" className="panel panel-default animated bounceInLeft" role="form">
@@ -35,7 +39,10 @@ var Login  = React.createClass({
               </form>
               }
           </div>
-      
+          </div>
+          <div className= "col-sm-4">
+          </div>
+      </div>
    
 
 

@@ -3,6 +3,16 @@ var React = require("react");
 var axios = require("axios");
 
 
+var divStyle = {
+  color: "green"
+};
+
+var redStyle = {
+  color: "red"
+}
+
+
+
 // Create the News component
 class News extends React.Component {
  constructor(props) {
@@ -17,21 +27,28 @@ componentDidMount() {
     var self = this;
  var articles = [];
  axios.get("/articles").then(function (res) {
-     var articles = res.data.slice(0,10);
+     var articles = res.data.slice(0, 10);
+
 
       self.setState({
         articles: articles
-
  })
 })
 }
+
+
 
  render() {
 
 
       return (
 
-          <div className="well col-lg-10 col-sm-11 col-md-10">
+
+
+        <div className="row">
+      <div className="col-md-2">
+      </div>
+          <div className="well col-md-8">
           <table className="table table-hover">
           <thead>
           <tr><th><h2>
@@ -42,7 +59,10 @@ componentDidMount() {
           <tbody>
             { this.state.articles.map(article =>
                   <tr>
-                   <td><a href={article.link}>{article.title}</a></td>
+                   <td><span className="glyphicon glyphicon-search" style={divStyle} aria-hidden="true"></span>
+                   <span className="glyphicon glyphicon-usd" style={divStyle} aria-hidden="true"></span>
+                   <span className="glyphicon glyphicon-gbp" style={redStyle} aria-hidden="true"></span>
+                    <span className="glyphicon glyphicon-eur" style={redStyle} aria-hidden="true"></span><a href={article.link}> {article.title}</a></td>
 
                    </tr> 
 )}
@@ -51,6 +71,9 @@ componentDidMount() {
 
 
 
+          </div>
+          <div className="col-md-2">
+          </div>
           </div>
 
           )

@@ -33,12 +33,10 @@ Please read [CONTRIBUTING.md](https://gist.github.com/bgrego11/fxman) for detail
 
 ## Authors
 
-**Steven Snyder** 
+**Steven Snyder,**
 **Ben Gregory**
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
 

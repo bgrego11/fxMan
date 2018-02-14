@@ -3,16 +3,6 @@ var React = require("react");
 var axios = require("axios");
 
 
-var divStyle = {
-  color: "green"
-};
-
-var redStyle = {
-  color: "red"
-}
-
-
-
 // Create the News component
 class News extends React.Component {
  constructor(props) {
@@ -49,7 +39,7 @@ componentDidMount() {
       <div className="col-md-2">
       </div>
           <div className="well col-md-8">
-          <table className="table table-hover">
+          <table className="table table-dark">
           <thead>
           <tr><th><h1>
           The Latest Foreign Currency Exchange news and updates!
@@ -59,8 +49,7 @@ componentDidMount() {
           <tbody>
             { this.state.articles.map(article =>
                   <tr>
-                   <td><span className="glyphicon glyphicon-search" style={divStyle} aria-hidden="true"></span>
-                    <span className="glyphicon glyphicon-eur" style={redStyle} aria-hidden="true"></span><a href={article.link}> {article.title}</a></td>
+                   <td><a href={article.link}> {article.title}</a></td>
 
                    </tr> 
 )}

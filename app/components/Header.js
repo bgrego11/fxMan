@@ -1,41 +1,44 @@
 // Include React
 var React = require("react");
 
-// Create the Header component
-// Notice how the header uses React.createClass
-// Notice how it uses a render function which specifies what will be displayed by the component
-var Header = React.createClass({
-  logout: function(evt) {
+
+class Header extends React.Component {
+  logout(evt) {
         sessionStorage.id ='';
         window.location='#/login'
-  },
-  render: function() {
+  }
+  render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <ul className="nav navbar-nav col-sm-12 col-md-6-offset-3 col-lg-6-offset-3">
-        <li className="active">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a className="navbar-brand" href="#">ForexApp</a>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+  <div className="collapse navbar-collapse" id="navbarNav">
+    <ul className="navbar-nav">
+    <li className="nav-item">
             {!sessionStorage.id ? (
-            <a href="#/login">Login</a>
+            <a className="nav-link" href="#/login">Login</a>
             ) : (
-            <a href="" onClick={this.logout}>Logout</a>
+            <a className="nav-link" href="" onClick={this.logout}>Logout</a>
             )
             }
         </li>
-        <li>
-            <a href="#/hub">Home</a>
-        </li>
-        <li>
-            <a href="#/portfolio">Portfolio</a>
-        </li>
-                <li>
-            <a href="#/articles">Latest News</a>
-        </li>'
-
+      <li className="nav-item">
+        <a className="nav-link" href="#/hub">Home <span className="sr-only">(current)</span></a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#/portfolio">Portfolio</a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#/articles">Latest News</a>
+      </li>
     </ul>
+  </div>
 </nav>
     );
   }
-});
+}
 
 // Export the component back for use in other files
 module.exports = Header;

@@ -26,8 +26,7 @@ import Display from "../components/Display";
 import Portfolio from "../components/Portfolio";
 import News from "../components/News";
 import Summary from "../components/Summary";
-var Nav = require("../components/Nav");
-
+import Nav from "../components/Nav";
 var Create = require("../components/Create");
 
 import Chart from "../components/Chart";

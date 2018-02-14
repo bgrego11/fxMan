@@ -1,12 +1,10 @@
 // Include React
 var React = require("react");
 
-// Create the Header component
-// Notice how the header uses React.createClass
-// Notice how it uses a render function which specifies what will be displayed by the component
-var Nav = React.createClass({
 
-  render: function() {
+class Nav extends React.Component {
+
+  render() {
   
 
 
@@ -49,9 +47,6 @@ var Nav = React.createClass({
   	)
 
   }
-});
+}
 
-module.exports = Nav;
-
-
-// set up create user, add button an function for route and page to create 
+module.exports = Nav

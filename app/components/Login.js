@@ -1,18 +1,21 @@
 // Include React
 var React = require("react");
 var axios = require("axios");
+import PropTypes from 'prop-types';
 
 // Create the Header component
 // Notice how the header uses React.createClass
 // Notice how it uses a render function which specifies what will be displayed by the component
-var Login  = React.createClass({
-  getInitialState: function() {
-    return {
-      user: '',
-      password: '',
-    };
-  },
-  render: function() {
+class Login extends React.Component {
+constructor(props) {
+  super(props);
+
+  this.state = {
+    user: '',
+    password: '',
+  }
+}
+  render() {
     
     return (
     
@@ -27,15 +30,15 @@ var Login  = React.createClass({
 
               <div className="panel-body form-group">
                   <label for="">User Name</label>
-                  <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" id="" placeholder="jill123" />
+                  <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" id="b" placeholder="jill123" />
                   <label for="">Password</label>
-                  <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
+                  <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="a" placeholder="****" />
               </div>
-              <button id="logBtn" onClick={this.login} className="btn btn-danger">Login</button>
+              <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
               <br></br>
               <div><h2>Don't Have a login yet?</h2>
               </div>
-              <button id="logBtn" onClick={this.next} className="btn btn-danger">Create new User</button>
+              <button id="logBtn" onClick={this.next} className="btn btn-success">Create New</button>
               </form>
               }
           </div>
@@ -48,18 +51,18 @@ var Login  = React.createClass({
 
 
     );
-  },
-  updateUser: function(evt) {
+  }
+  updateUser(evt) {
     this.setState({
       user: evt.target.value
     });
-  },
-  updatePw: function(evt) {
+  }
+  updatePw(evt) {
     this.setState({
       password: evt.target.value
     });
-  },
-  login: function(e) {
+  }
+  login(e) {
     e.preventDefault();
    var data = this.state;
    var self = this;
@@ -67,15 +70,15 @@ var Login  = React.createClass({
       sessionStorage.setItem("id", res.data._id)
       window.location.href = '/#/hub';
     })
-  },
-  next: function(e) {
+  }
+  next(e) {
     e.preventDefault();
     window.location.href = '/#/create';
 
   }
 
 
-});
+};
 
 // Export the component back for use in other files
 module.exports = Login;

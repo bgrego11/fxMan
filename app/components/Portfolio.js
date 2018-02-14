@@ -3,11 +3,6 @@ var axios = require("axios");
 var moment = require("moment");
 
 
-
-
-// Create the Header component
-// Notice how the header uses React.createclassName
-// Notice how it uses a render function which specifies what will be displayed by the component
 class Portfolio extends React.Component {
   constructor(props) {
     super(props);

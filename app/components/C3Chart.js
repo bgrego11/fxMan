@@ -38,7 +38,7 @@ let C3Chart = React.createClass({
 //color theme
 	colors: function(count) {
 		let colors = [];
-		let color = d3.scale.category10();
+		let color = d3.scale.category10(1);
 		for(let i = 0; i < count; i++){
 			colors.push(color(i));
 		}

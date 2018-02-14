@@ -18,7 +18,7 @@
 }
 
 .update-nag > .update-split{
-  background: #337ab7;
+  background:  #ffb600;
   width: 33px;
   float: left;
   color: #fff!important;
@@ -68,7 +68,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
-  color: #4c3f54;
+  color: #ffffff;
   background-color:#1F2739;
 }
 
@@ -99,7 +99,7 @@ h2 a {
   text-decoration: none;
 }
 
-.blue { color: #185875; }
+.blue { color: #ffffff; }
 .yellow { color: #FFF842; }
 
 .container th h1 {
@@ -178,6 +178,10 @@ h2 a {
 label {
     color: whitesmoke;
 
+}
+
+tspan {
+  color: white;
 }
 
 .port-head {

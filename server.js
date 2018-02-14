@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var path = require("path");
 var cheerio = require("cheerio");
 var axios = require("axios");
+var PropTypes = require('prop-types');
 //currency rate/conversion packages
 var oxr = require('open-exchange-rates'),
   fx = require('money');

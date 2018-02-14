@@ -62,13 +62,10 @@ var Login  = React.createClass({
   login: function(e) {
     e.preventDefault();
    var data = this.state;
-   console.log(data);
    var self = this;
     axios.post("/user/login",data).then(function(res) {
-      console.log(res.data);
       sessionStorage.setItem("id", res.data._id)
       window.location.href = '/#/hub';
-      console.log(sessionStorage);
     })
   },
   next: function(e) {

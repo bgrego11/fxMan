@@ -11,7 +11,7 @@ var Header = React.createClass({
   },
   render: function() {
     return (
-      <nav className="navbar navbar-inverse">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <ul className="nav navbar-nav col-sm-12 col-md-6-offset-3 col-lg-6-offset-3">
         <li className="active">
             {!sessionStorage.id ? (

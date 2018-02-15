@@ -1,19 +1,22 @@
 // Include React
 var React = require("react");
 var axios = require("axios");
-
+import PropTypes from 'prop-types';
 // Create the Header component
 // Notice how the header uses React.createClass
 // Notice how it uses a render function which specifies what will be displayed by the component
-var Create  = React.createClass({
-  getInitialState: function() {
-    return {
+class Create extends React.Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
       user: '',
       password: '',
       email: ''
-    };
-  },
-  render: function() {
+    }
+  }
+
+  render() {
     return (
     
         <div className= "row">
@@ -25,14 +28,14 @@ var Create  = React.createClass({
     <legend>Login</legend>
 
     <div className="panel-body form-group">
-        <label for="">User Name</label>
-        <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" id="" placeholder="jill123" />
+        <label>User Name</label>
+        <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" placeholder="jill123" />
          <label for="">Email</label>
-        <input value={this.state.email} onChange={this.updateEmail} type="text" className="form-control" id="" />
-        <label for="">Password</label>
-        <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="" placeholder="****" />
+        <input value={this.state.email} onChange={this.updateEmail} type="text" className="form-control" />
+        <label>Password</label>
+        <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" placeholder="****" />
     </div>
-    <button id="logBtn" onClick={this.create} className="btn btn-danger">Create</button>
+    <button id="logBtn" onClick={this.create} className="btn btn-success">Create</button>
     </form>
 </div>
 </div>
@@ -44,23 +47,23 @@ var Create  = React.createClass({
 
 
     );
-  },
-  updateUser: function(evt) {
+  }
+  updateUser(evt) {
     this.setState({
       user: evt.target.value
     });
-  },
-  updatePw: function(evt) {
+  }
+  updatePw(evt) {
     this.setState({
       password: evt.target.value
     });
-  },
-  updateEmail: function(evt) {
+  }
+  updateEmail(evt) {
     this.setState({
       email: evt.target.value
     });
-  },
-  create: function(e) {
+  }
+  create(e) {
     e.preventDefault();
    var data = this.state;
    var self = this;
@@ -72,7 +75,7 @@ var Create  = React.createClass({
     })
   }
 
-});
+}
 
 // Export the component back for use in other files
 module.exports = Create;

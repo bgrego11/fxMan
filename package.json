@@ -20,6 +20,7 @@
     "body-parser": "^1.15.2",
     "c3-react": "^0.1.13",
     "cheerio": "^0.22.0",
+    "create-react-class": "^15.6.3",
     "crypto": "0.0.3",
     "express": "^4.14.0",
     "moment": "^2.18.1",
@@ -28,9 +29,9 @@
     "open-exchange-rates": "^0.3.0",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
     "react-router": "^2.4.1",
-    "webpack": "^1.14.0"
+    "webpack": "^1.15.0"
   }
 }

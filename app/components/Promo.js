@@ -1,4 +1,5 @@
 var React = require("react");
+var PropTypes = require('prop-types');
 
 // Create the Header component
 // Notice how the header uses React.createClass

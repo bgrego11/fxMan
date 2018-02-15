@@ -13,7 +13,10 @@ constructor(props) {
   this.state = {
     user: '',
     password: '',
-  }
+  };
+this.updateUser = this.updateUser.bind(this)
+this.updatePw = this.updatePw.bind(this)
+this.login = this.login.bind(this)
 }
   render() {
     
@@ -29,16 +32,16 @@ constructor(props) {
               <legend>Login</legend>
 
               <div className="panel-body form-group">
-                  <label for="">User Name</label>
+                  <label >User Name</label>
                   <input value={this.state.user} onChange={this.updateUser} type="text" className="form-control" id="b" placeholder="jill123" />
-                  <label for="">Password</label>
+                  <label >Password</label>
                   <input value={this.state.password} onChange={this.updatePw} type="Password" className="form-control" id="a" placeholder="****" />
               </div>
               <button id="logBtn" onClick={this.login} className="btn btn-success">Login</button>
               <br></br>
               <div><h2>Don't Have a login yet?</h2>
               </div>
-              <button id="logBtn" onClick={this.next} className="btn btn-success">Create New</button>
+              <button id="createBtn" onClick={this.next} className="btn btn-success">Create New</button>
               </form>
               }
           </div>
@@ -46,20 +49,16 @@ constructor(props) {
           <div className= "col-sm-4">
           </div>
       </div>
-   
-
-
-
     );
   }
-  updateUser(evt) {
+  updateUser(e) {
     this.setState({
-      user: evt.target.value
+      user: e.target.value
     });
   }
-  updatePw(evt) {
+  updatePw(e) {
     this.setState({
-      password: evt.target.value
+      password: e.target.value
     });
   }
   login(e) {

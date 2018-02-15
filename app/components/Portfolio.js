@@ -1,6 +1,7 @@
 var React = require("react");
 var axios = require("axios");
 var moment = require("moment");
+var PropTypes = require('prop-types');
 
 
 class Portfolio extends React.Component {

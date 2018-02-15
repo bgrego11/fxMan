@@ -20,14 +20,14 @@ var IndexRoute = router.IndexRoute;
 
 import Main from "../components/main";
 import Promo from "../components/Promo";
-var Login = require("../components/Login");
+import Login from "../components/Login";
 import Trader from "../components/Trader";
 import Display from "../components/Display";
 import Portfolio from "../components/Portfolio";
 import News from "../components/News";
 import Summary from "../components/Summary";
 import Nav from "../components/Nav";
-var Create = require("../components/Create");
+import Create from "../components/Create";
 
 import Chart from "../components/Chart";
 

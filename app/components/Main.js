@@ -1,14 +1,15 @@
 // Include the Main React Dependencies
 var React = require("react");
 var ReactDOM = require("react-dom");
+import PropTypes from 'prop-types';
 
 // Include the Header Component
-var Header = require("./Header");
-var Login = require("./Login");
-var Footer = require("./Footer");
-var Demo = require("./Demo");
-var Nav = require("./Nav");
-var Create = require("./Create");
+import Header from "./Header";
+import Login from "./Login";
+import Footer from "./Footer";
+import Demo from"./Demo";
+import Nav from "./Nav";
+import Create from "./Create";
 
 import Promo from "./Promo";
 import Trader from "./Trader";

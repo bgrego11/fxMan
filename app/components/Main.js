@@ -10,7 +10,6 @@ import Footer from "./Footer";
 import Demo from"./Demo";
 import Nav from "./Nav";
 import Create from "./Create";
-
 import Promo from "./Promo";
 import Trader from "./Trader";
 import Portfolio from "./Portfolio";

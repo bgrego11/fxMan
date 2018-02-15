@@ -9,20 +9,21 @@ class Display extends React.Component {
 render() {
 
     return (
-<div className="col-md-12 col-sm-12 col-lg-12 well display">
-    <h1 className="well port-head">
+<div className="col-lg-12" id="wrapper">
+    <h1 className="port-head">
     Portfolio Viewer</h1>
-    <div className="well col-sm-12 col-md-3 col-lg-3">
-        <div class="list-group">
-            <a href="#/portfolio/trades"><button type="button" className="list-group-item btn btn-default">Trade Blotter</button></a>
-            <a href="#/portfolio/summary"><button type="button" className="list-group-item btn btn-default">Account Summary</button>
+    <div className="col-lg-11">
+    <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="#/portfolio/trades"><button type="button" className="btn btn-success">Trade Blotter</button></a>
+            <a href="#/portfolio/summary"><button type="button" className="btn btn-danger">Account Summary</button>
             </a>
-            <a href="#/portfolio/charts"><button type="button" className="list-group-item btn btn-default">Charts</button>
+            <a href="#/portfolio/charts"><button type="button" className="btn btn-warning">Charts</button>
             </a>
-        </div>
+</div>
+<br></br>
         <Trader />
     </div>
-    <div className="col-sm-12 col-md-9 col-lg-9">
+    <div className="col-lg-11">
     {this.props.children}
   </div>
 

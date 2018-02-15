@@ -69,13 +69,17 @@ class Chart extends React.Component {
 
 return(
 <div>
-<div className="form-group row">
+  <form>
+<div className="form-row">
+<div className="col">
             <label for="sel1">Select Currency to Chart:</label>
             <select value={this.state.report} onChange={this.setReportType} className="form-control" id="sel1">
                 <option value="pfc">Number of Trades by Currency</option>
                 <option value="tbc">Purchase Amount by Currency</option>
             </select>
+            </div>
         </div>
+        </form>
 <C3Chart data={this.state.data} type={this.state.type} options={options}/>
  </div>                
                       

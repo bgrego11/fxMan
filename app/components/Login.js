@@ -26,9 +26,9 @@ this.login = this.login.bind(this)
      <div className="col-sm-4">
      </div>
      <div className="col-sm-4">
-               <div ref="login" id="login">
+               <div ref="login" id="logincomp">
                {!sessionStorage.id &&
-                <form action="" id="logDiv" method="POST" className="panel panel-default animated bounceInLeft" role="form">
+                <form action="" id="logDiv" method="POST" className="panel panel-dark animated bounceInLeft" role="form">
               <legend>Login</legend>
 
               <div className="panel-body form-group">

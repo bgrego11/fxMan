@@ -13,18 +13,17 @@ body	{
 }
 
 
-
+#logincomp {
+    padding-top: 20px;
+}
 
 #logDiv {
- background-color: rgba(0, 0, 0, 0.7);
+ background-color: #343a40;
+ margin-bottom: 5%
 }
 
 legend {
     text-align: center
-}
-
-#logDiv {
-    margin-bottom: 5%
 }
 
 #logBtn {

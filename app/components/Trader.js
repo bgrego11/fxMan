@@ -81,9 +81,9 @@ class Trader extends React.Component {
 
     return (
      
-        <div className="well col-lg-10 col-sm-11 col-md-10">
+        <div className="col-lg-3 col-sm-12 col-md-3 text-center">
 
-        <div className="form-group row">
+        <div className="form-group row text-center">
             <label for="sel1">Select Currency to Purchase:</label>
             <select value={this.state.buyCcy} onChange={this.setCcy} className="form-control" id="sel1">
                 <option value="GBP">GBP</option>
@@ -116,10 +116,10 @@ class Trader extends React.Component {
             <div className="form-control"><span className="glyphicon glyphicon-usd"></span>{this.state.sellAmt}</div>
         </div>
         
-        <div className="row">
-          <div className="col-sm-12 col-lg-10 col-md-10">
-            <button className="btn btn-default" onClick={this.reval} >Value Trade</button>
-            <button className="btn btn-danger" onClick={this.book} >Book Trade</button>
+        <div className="row text-center">
+          <div className="col-sm-12 col-lg-3 col-md-3 btn-group" role="group" aria-label="Basic example">
+            <button className="btn btn-danger" onClick={this.reval} >Value Trade</button>
+            <button className="btn btn-success" onClick={this.book} >Book Trade</button>
           </div>
         
         </div>

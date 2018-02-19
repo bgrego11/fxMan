@@ -1,20 +1,18 @@
 #introContainer {
-    height: 100vh;
+    height: 90vh;
     padding: 0;
     margin: 0;
-    background: #4a2667;
   }
   
   svg.intro {
-    background: linear-gradient(135deg, #aa3bb1, #582a7e);
-    max-width: 800px;
+    width: 90%;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    -webkit-box-shadow: 0 30px 50px -20px #2e0642;
-            box-shadow: 0 30px 50px -20px #2e0642;
+    -webkit-box-shadow: 0 30px 50px -20px #ac0afd;
+            box-shadow: 0 30px 50px -20px #ffffff;
   }
   svg.intro .text {
     display: none;
@@ -27,7 +25,7 @@
   }
   svg.introgo .text-stroke {
     fill: none;
-    stroke: #51256f;
+    stroke: #105ed3;
     stroke-width: 2.8px;
     stroke-dashoffset: -900;
     stroke-dasharray: 900;
@@ -45,7 +43,7 @@
             animation-delay: .9s;
   }
   svg.introgo .text-stroke-2 {
-    stroke: #f6bdfa;
+    stroke: #ffffff;
     -webkit-animation-delay: 1.2s;
             animation-delay: 1.2s;
   }

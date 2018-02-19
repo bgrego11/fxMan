@@ -28,7 +28,7 @@ import News from "../components/News";
 import Summary from "../components/Summary";
 import Nav from "../components/Nav";
 import Create from "../components/Create";
-
+import Intro from "../components/Intro"
 import Chart from "../components/Chart";
 
 
@@ -36,6 +36,8 @@ module.exports = (
  <Router history={hashHistory}>
 
     <Route path="/" component={Main}>
+    <Route path="intro" component={Intro} >
+    </Route>
     <Route path="login" component={Login} >
     </Route>
     <Route path="create" component={Create} >

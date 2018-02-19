@@ -7,9 +7,14 @@ var React = require("react");
 class Footer extends React.Component {
   render() {
     return (
-    <footer>
-        <p><a href="#">Created by</a> Benjamin Gregory and Steven Snyder.</p>
-    </footer>
+<footer>
+  <div id="contact">
+        <div id="bottom"><a href="https://github.com/bgrego11/fxman" target="_blank">Created with React</a>
+          <p className="made-by-me">Steven Snyder | Ben Gregory © 2018</p>
+        </div>
+      </div>
+</footer>
+
     )
   }
 };

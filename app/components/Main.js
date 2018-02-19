@@ -15,6 +15,7 @@ import Trader from "./Trader";
 import Portfolio from "./Portfolio";
 import Display from "./Display";
 import News from "./News";
+import Intro from "./Intro"
 
 class Main extends React.Component {
   constructor(props) {

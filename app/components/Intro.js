@@ -46,30 +46,6 @@ document.addEventListener('DOMContentLoaded', function(){
     
         }, false);
     }
-/*
-start() {
-  var element = document.getElementsByClassName("intro")
-  element.classList.add('go');
-    document.getElementsByClassName('reload').onclick(function(next) {
-        element.classNameList.remove('go').delay(200).queue(function(next) {
-            element.classNameList.add('go')
-            next();
-        })
-    })
-}
-
-$(function() {
-    $('.intro').addClass('go');
-  
-    $('.reload').click(function() {
-      $('.intro').removeClass('go').delay(200).queue(function(next) {
-        $('.intro').addClass('go');
-        next();
-      });
-  
-    });
-  }
-  */
 }
 
 // Export the component back for use in other files

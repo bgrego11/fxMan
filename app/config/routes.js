@@ -35,7 +35,7 @@ import Chart from "../components/Chart";
 module.exports = (
  <Router history={hashHistory}>
 
-    <Route path="/" component={Main}>
+    <Route exact path="/" component={Main}>
     <Route path="intro" component={Intro} >
     </Route>
     <Route path="login" component={Login} >

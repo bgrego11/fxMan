@@ -21,7 +21,6 @@ this.login = this.login.bind(this)
   render() {
     
     return (
-    
     <div className= "row">
      <div className="col-sm-4">
      </div>
@@ -49,6 +48,7 @@ this.login = this.login.bind(this)
           <div className= "col-sm-4">
           </div>
       </div>
+
     );
   }
   updateUser(e) {

@@ -28,7 +28,7 @@ class Main extends React.Component {
 // Here we deploy the header component as though it were any other HTML element
   <div><Header />
   <div>
-  <div className="container-fluid col-sm-12 col-md-12 col-lg-12">
+  <div className="container-fluid col-xs-12 col-sm-12 col-md-12 col-lg-12">
     {this.props.children}
   </div>
   <Footer />

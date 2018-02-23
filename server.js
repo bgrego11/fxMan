@@ -108,7 +108,6 @@ app.get("/close/:id", function (req, res) {
       if (err) {
         console.log(err);
       } else {
-        console.log(doc);
         var deal = doc;
         oxr.latest(function () {
               // You can now use `oxr.rates`, `oxr.base` and `oxr.timestamp`
@@ -167,7 +166,7 @@ app.get("/close/:id", function (req, res) {
 
 
 
-app.get("/login", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
@@ -196,7 +195,6 @@ app.post("/user/login", function (req, res) {
 
 
 app.post("/portfolio", function (req, res) {
-  console.log(req.body);
   var id = req.body.id;
   Trade.find({
     client: new RegExp('^'+id+'$', "i")
@@ -210,7 +208,7 @@ app.post("/portfolio", function (req, res) {
 });
 
 app.post("/chart", function (req, res) {
-  console.log(req.body);
+
   var id = req.body.id;
   if (req.body.report === "pfc") {
         Trade.aggregate({
@@ -247,7 +245,6 @@ app.post("/chart", function (req, res) {
 
 
 app.post("/summary", function (req, res) {
-  console.log(req.body);
   var id = req.body.id;
   Trade.find({
     client: new RegExp('^'+id+'$', "i")
@@ -290,7 +287,6 @@ app.post("/user/create", function (req, res) {
       console.log(err);
       res.send(err)
     } else {
-      console.log("saved");
       res.send(user);
     }
   })
@@ -314,7 +310,6 @@ app.post("/book/trade", function (req, res) {
       console.log(err);
       res.send(err)
     } else {
-      console.log("saved");
       res.send(trade);
     }
   })
